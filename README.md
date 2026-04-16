@@ -2,9 +2,9 @@
 
 ## 📌 Description
 
-This project implements a secure client-server system using low-level TCP socket programming and SSL/TLS encryption. It allows authenticated users to execute remote system commands securely and receive outputs over the network.
+This project implements a secure client-server system using TCP socket programming and SSL/TLS encryption. It allows authenticated users to execute system commands remotely and receive outputs securely over the network.
 
-The system demonstrates concepts such as secure communication, concurrency, protocol design, authentication, and logging.
+The system demonstrates secure communication, authentication, concurrency, protocol design, and logging.
 
 ---
 
@@ -13,22 +13,19 @@ The system demonstrates concepts such as secure communication, concurrency, prot
 * 🔐 SSL/TLS secure communication
 * 👥 Multi-client support using threading
 * 🔑 Authentication using users.txt
-* 💻 Remote command execution with restrictions
+* 💻 Remote command execution
 * 📋 Logging system for audit tracking
-* 🖥️ GUI client support (Tkinter)
 * ⚡ Structured communication protocol
 
 ---
 
 ## 🏗️ Architecture
 
-The system follows a client-server architecture:
-
-Client (CLI / GUI)
+Client (CLI)
   ⬇ (SSL/TLS Encrypted Communication)
 Server (Multi-threaded)
   ⬇
-Command Execution (subprocess)
+Command Execution
   ⬇
 Log File (log.txt)
 
@@ -36,13 +33,12 @@ Log File (log.txt)
 
 ## 🔄 Communication Protocol
 
-Data is transmitted in a structured format:
+Data is transmitted in the format:
 
 username | password | command
 
-* Message is reversed before transmission
-* Encoded using Base64
-* Server decodes, authenticates, and executes the command
+* Message is encoded using Base64
+* Server decodes and processes the request
 
 ---
 
@@ -50,7 +46,7 @@ username | password | command
 
 ### 1. Install Python
 
-Ensure Python 3.8 or above is installed.
+Python 3.8 or above is recommended.
 
 ---
 
@@ -70,7 +66,7 @@ python generate_cert.py
 
 ---
 
-### 4. Start the Server
+### 4. Start Server
 
 ```
 python server_ssl.py
@@ -78,18 +74,10 @@ python server_ssl.py
 
 ---
 
-### 5. Run Client (CLI)
+### 5. Run Client
 
 ```
 python client_ssl.py
-```
-
----
-
-### 6. Run GUI Client
-
-```
-python gui_client_ssl.py
 ```
 
 ---
@@ -98,47 +86,41 @@ python gui_client_ssl.py
 
 * SSL/TLS encryption ensures secure communication
 * Authentication prevents unauthorized access
-* Command restrictions prevent unsafe execution
-* Data encoding provides additional protection
+* Only valid users can execute commands
+* Logging provides traceability
 
 ---
 
 ## 📊 Performance Evaluation
 
-The system was tested with multiple concurrent clients.
-
-* Response Time: Low for standard commands
-* Concurrency: Efficient due to threading
-* Scalability: Handles multiple clients simultaneously
-* Latency: Minimal under normal conditions
+* Low response time for normal commands
+* Efficient handling of multiple clients using threading
+* Minimal latency under standard usage
 
 ---
 
-## 🛠️ Optimization & Error Handling
+## 🛠️ Error Handling
 
-* Handles invalid credentials
-* Restricts unauthorized commands
-* Uses exception handling for network errors
-* Supports multiple clients concurrently
-* Ensures stable server operation
+* Handles invalid login credentials
+* Prevents unauthorized command execution
+* Manages connection errors gracefully
 
 ---
 
 ## 📂 Project Files
 
-* server_ssl.py → Secure multi-threaded server
+* server_ssl.py → Secure server implementation
 * client_ssl.py → Command-line client
-* gui_client_ssl.py → GUI client
 * generate_cert.py → SSL certificate generator
 * users.txt → Authentication data
 * log.txt → Command logs
-* server.crt / server.key → SSL certificates
+* server.crt / server.key → SSL certificate and key
 
 ---
 
 ## 🎯 Conclusion
 
-This project successfully demonstrates a secure network application using TCP sockets and SSL/TLS encryption. It integrates authentication, concurrency, protocol design, and logging to provide a complete and reliable system.
+This project successfully demonstrates a secure client-server architecture using TCP sockets with SSL/TLS encryption. It integrates authentication, logging, and concurrency to build a reliable and secure system.
 
 ---
 

@@ -2,9 +2,7 @@
 
 ## 📌 Description
 
-This project implements a secure client-server system using TCP socket programming and SSL/TLS encryption. It allows authenticated users to execute system commands remotely and receive outputs securely over the network.
-
-The system demonstrates secure communication, authentication, concurrency, protocol design, and logging.
+This project implements a secure client-server system using TCP socket programming and SSL/TLS encryption. It allows authenticated users to execute system commands remotely and receive the output securely.
 
 ---
 
@@ -14,30 +12,31 @@ The system demonstrates secure communication, authentication, concurrency, proto
 * 👥 Multi-client support using threading
 * 🔑 Authentication using users.txt
 * 💻 Remote command execution
-* 📋 Logging system for audit tracking
+* 📋 Logging system (log.txt)
 * ⚡ Structured communication protocol
 
 ---
 
 ## 🏗️ Architecture
 
-Client (CLI)
+Client
   ⬇ (SSL/TLS Encrypted Communication)
-Server (Multi-threaded)
+Server
   ⬇
 Command Execution
   ⬇
-Log File (log.txt)
+Log File
 
 ---
 
 ## 🔄 Communication Protocol
 
-Data is transmitted in the format:
+Data is sent in the format:
 
 username | password | command
 
-* Message is encoded using Base64
+* Encoded using Base64
+* Reversed before sending
 * Server decodes and processes the request
 
 ---
@@ -46,7 +45,7 @@ username | password | command
 
 ### 1. Install Python
 
-Python 3.8 or above is recommended.
+Python 3.8 or above is required.
 
 ---
 
@@ -66,10 +65,10 @@ python generate_cert.py
 
 ---
 
-### 4. Start Server
+### 4. Run Server
 
 ```
-python server_ssl.py
+python server.py
 ```
 
 ---
@@ -77,7 +76,7 @@ python server_ssl.py
 ### 5. Run Client
 
 ```
-python client_ssl.py
+python client.py
 ```
 
 ---
@@ -86,41 +85,41 @@ python client_ssl.py
 
 * SSL/TLS encryption ensures secure communication
 * Authentication prevents unauthorized access
-* Only valid users can execute commands
-* Logging provides traceability
+* Only allowed commands are executed
+* Data encoding adds extra safety
 
 ---
 
-## 📊 Performance Evaluation
+## 📊 Performance
 
-* Low response time for normal commands
-* Efficient handling of multiple clients using threading
-* Minimal latency under standard usage
+* Fast response time
+* Supports multiple clients using threading
+* Efficient communication with low latency
 
 ---
 
 ## 🛠️ Error Handling
 
-* Handles invalid login credentials
-* Prevents unauthorized command execution
-* Manages connection errors gracefully
+* Handles invalid credentials
+* Prevents unauthorized commands
+* Handles connection errors
 
 ---
 
 ## 📂 Project Files
 
-* server_ssl.py → Secure server implementation
-* client_ssl.py → Command-line client
+* server.py → Secure server implementation (uses SSL internally)
+* client.py → Client program
 * generate_cert.py → SSL certificate generator
-* users.txt → Authentication data
-* log.txt → Command logs
+* users.txt → Stores username and password
+* log.txt → Stores command logs
 * server.crt / server.key → SSL certificate and key
 
 ---
 
 ## 🎯 Conclusion
 
-This project successfully demonstrates a secure client-server architecture using TCP sockets with SSL/TLS encryption. It integrates authentication, logging, and concurrency to build a reliable and secure system.
+This project demonstrates secure client-server communication using TCP sockets with SSL/TLS encryption. It integrates authentication, command execution, and logging.
 
 ---
 

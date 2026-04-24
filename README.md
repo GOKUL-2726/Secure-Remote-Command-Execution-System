@@ -1,23 +1,23 @@
-# 🔐 Secure Remote Command Execution System
+#  Secure Remote Command Execution System
 
-## 📌 Description
+## Description
 
 This project implements a secure client-server system using TCP socket programming and SSL/TLS encryption. It allows authenticated users to execute system commands remotely and receive the output securely.
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 🔐 SSL/TLS secure communication
-* 👥 Multi-client support using threading
-* 🔑 Authentication using users.txt
-* 💻 Remote command execution
-* 📋 Logging system (log.txt)
-* ⚡ Structured communication protocol
+*  SSL/TLS secure communication
+*  Multi-client support using threading
+*  Authentication using users.txt
+*  Remote command execution
+*  Logging system (log.txt)
+*  Structured communication protocol
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 Client
   ⬇ (SSL/TLS Encrypted Communication)
@@ -29,7 +29,7 @@ Log File
 
 ---
 
-## 🔄 Communication Protocol
+##  Communication Protocol
 
 Data is sent in the format:
 
@@ -41,7 +41,7 @@ username | password | command
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Install Python
 
@@ -81,7 +81,7 @@ python client.py
 
 ---
 
-## 🔐 Security Features
+##  Security Features
 
 * SSL/TLS encryption ensures secure communication
 * Authentication prevents unauthorized access
@@ -90,7 +90,7 @@ python client.py
 
 ---
 
-## 📊 Performance
+##  Performance
 
 * Fast response time
 * Supports multiple clients using threading
@@ -98,7 +98,7 @@ python client.py
 
 ---
 
-## 🛠️ Error Handling
+##  Error Handling
 
 * Handles invalid credentials
 * Prevents unauthorized commands
@@ -106,7 +106,7 @@ python client.py
 
 ---
 
-## 📂 Project Files
+##  Project Files
 
 * server.py → Secure server implementation (uses SSL internally)
 * client.py → Client program
@@ -117,12 +117,12 @@ python client.py
 
 ---
 
-## 🎯 Conclusion
+##  Conclusion
 
 This project demonstrates secure client-server communication using TCP sockets with SSL/TLS encryption. It integrates authentication, command execution, and logging.
 
 ---
 
-## 🔗 GitHub Repository
+##  GitHub Repository
 
 https://github.com/GOKUL-2726/Secure-Remote-Command-Execution-System
